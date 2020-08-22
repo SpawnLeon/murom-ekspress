@@ -176,33 +176,19 @@ a {
     color          : #3a3285;
   }
 
-  // .actions-block__more
-  &__more {
-    font-size           : 14px;
-    line-height         : 1.6;
-    padding-right       : 80px;
-    letter-spacing      : 0.01em;
-    color               : #463f8d;
-    background-image    : url(../img/svg/arrow.svg);
-    background-repeat   : no-repeat;
-    background-position : 100% center;
-
-
-  }
-
   // .actions-block__inner
   &__inner {
     display      : flex;
+    flex-wrap    : wrap;
     margin-right : -14px;
     margin-left  : -14px;
-    flex-wrap: wrap;
 
   }
 
   // .actions-block__item
   &__item {
-    flex   : 0 0 calc(100% / 3 - 14px);
-    margin : 0 14px;
+    flex: 0 0 calc(100% / 3 - 28px);
+    margin: 0 14px;
   }
 }
 
@@ -367,33 +353,24 @@ a {
   &__description {
     font-size      : 14px;
     line-height    : 1.6;
-    max-width      : 480px;
+    padding        : 0 15px;
     letter-spacing : 0.01em;
     opacity        : 0.7;
     color          : #1e194d;
   }
 
-  // .busses-block__more
-  &__more {
-    align-self          : center;
-    padding-top         : 14px;
-    padding-right       : 80px;
-    background-image    : url(../img/svg/arrow.svg);
-    background-repeat   : no-repeat;
-    background-position : 100% center;
-  }
 
   // .busses-block__inner
   &__inner {
     display      : flex;
+    flex-wrap    : wrap;
     margin-right : -10px;
     margin-left  : -10px;
-    flex-wrap: wrap;
   }
 
   // .busses-block__item
   &__item {
-    flex   : 1 1 calc(100% / 4 - 15px);
+    flex   : 1 1 calc(100% / 4 - 30px);
     margin : 0 15px;
   }
 }
@@ -465,9 +442,9 @@ a {
   // .schedule-block__inner
   &__inner {
     display      : flex;
+    flex-wrap    : wrap;
     margin-right : -15px;
     margin-left  : -15px;
-    flex-wrap: wrap;
   }
 
   // .schedule-block__item
@@ -1107,7 +1084,7 @@ a {
   // .slider-nav__item
   &__item {
     padding-top         : 14px;
-    padding-right       : 80px;
+    padding-right       : 64px;
     cursor              : pointer;
     outline             : none;
     background-repeat   : no-repeat;
@@ -1124,5 +1101,9 @@ a {
       margin-left      : 30px;
       background-image : url(../img/svg/arrow.svg);
     }
+  }
+
+  .swiper-button-disabled {
+    opacity : 0.3;
   }
 }

@@ -22,14 +22,34 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  new Swiper('.swiper-container', {
+  new Swiper('.schedule-block__container', {
     slidesPerView: 4,
     spaceBetween: 30,
 
-    // Navigation arrows
+
     navigation: {
       nextEl: '.schedule-block__slider-nav .swiper-button-next',
       prevEl: '.schedule-block__slider-nav .swiper-button-prev',
+    },
+  });
+
+  new Swiper('.busses-block__container', {
+    slidesPerView: 4,
+    spaceBetween: 30,
+
+    navigation: {
+      nextEl: '.busses-block__slider-nav .swiper-button-next',
+      prevEl: '.busses-block__slider-nav .swiper-button-prev',
+    },
+  });
+
+  new Swiper('.actions-block__container', {
+    slidesPerView: 3,
+    spaceBetween: 28,
+
+    navigation: {
+      nextEl: '.actions-block__slider-nav .swiper-button-next',
+      prevEl: '.actions-block__slider-nav .swiper-button-prev',
     },
   });
 

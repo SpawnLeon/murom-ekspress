@@ -118,23 +118,14 @@ a {
   letter-spacing: 0.01em;
   color: #3a3285; }
 
-.actions-block__more {
-  font-size: 14px;
-  line-height: 1.6;
-  padding-right: 80px;
-  letter-spacing: 0.01em;
-  color: #463f8d;
-  background-image: url(../img/svg/arrow.svg);
-  background-repeat: no-repeat;
-  background-position: 100% center; }
-
 .actions-block__inner {
   display: flex;
+  flex-wrap: wrap;
   margin-right: -14px;
   margin-left: -14px; }
 
 .actions-block__item {
-  flex: 0 0 calc(100% / 3 - 14px);
+  flex: 0 0 calc(100% / 3 - 28px);
   margin: 0 14px; }
 
 .item-action__image {
@@ -250,26 +241,19 @@ a {
 .busses-block__description {
   font-size: 14px;
   line-height: 1.6;
-  max-width: 480px;
+  padding: 0 15px;
   letter-spacing: 0.01em;
   opacity: 0.7;
   color: #1e194d; }
 
-.busses-block__more {
-  align-self: center;
-  padding-top: 14px;
-  padding-right: 80px;
-  background-image: url(../img/svg/arrow.svg);
-  background-repeat: no-repeat;
-  background-position: 100% center; }
-
 .busses-block__inner {
   display: flex;
+  flex-wrap: wrap;
   margin-right: -10px;
   margin-left: -10px; }
 
 .busses-block__item {
-  flex: 1 1 calc(100% / 4 - 15px);
+  flex: 1 1 calc(100% / 4 - 30px);
   margin: 0 15px; }
 
 .item-bus__image {
@@ -313,6 +297,7 @@ a {
 
 .schedule-block__inner {
   display: flex;
+  flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px; }
 
@@ -706,7 +691,7 @@ a {
   margin-left: auto; }
   .slider-nav__item {
     padding-top: 14px;
-    padding-right: 80px;
+    padding-right: 64px;
     cursor: pointer;
     outline: none;
     background-repeat: no-repeat;
@@ -716,3 +701,5 @@ a {
     .slider-nav__item--next {
       margin-left: 30px;
       background-image: url(../img/svg/arrow.svg); }
+  .slider-nav .swiper-button-disabled {
+    opacity: 0.3; }
