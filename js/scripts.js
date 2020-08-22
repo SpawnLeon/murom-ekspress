@@ -1,13 +1,23 @@
+function showMenu() {
+  document.body.classList.add('has-menu-slide');
+  document.querySelector('.menu-slide-block').
+      classList.add('menu-slide-block--show');
+}
+
+function hideMenu() {
+  document.body.classList.remove('has-menu-slide');
+  document.querySelector('.menu-slide-block').
+      classList.
+      remove('menu-slide-block--show');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 
   const menuSlideOpen = document.querySelector('[data-js="menu-slide-open"]');
   if (menuSlideOpen) {
     menuSlideOpen.addEventListener('click', function(event) {
       event.preventDefault();
-      document.body.classList.add('has-menu-slide');
-      document.querySelector('.menu-slide-block').
-          classList.
-          add('menu-slide-block--show');
+      showMenu();
     });
   }
 
@@ -15,41 +25,86 @@ document.addEventListener('DOMContentLoaded', function() {
   if (menuslideClose) {
     menuslideClose.addEventListener('click', function(event) {
       event.preventDefault();
-      document.body.classList.remove('has-menu-slide');
-      document.querySelector('.menu-slide-block').
-          classList.
-          remove('menu-slide-block--show');
+
+      hideMenu();
     });
   }
 
   new Swiper('.schedule-block__container', {
     slidesPerView: 4,
     spaceBetween: 30,
-
-
     navigation: {
       nextEl: '.schedule-block__slider-nav .swiper-button-next',
       prevEl: '.schedule-block__slider-nav .swiper-button-prev',
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      520: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      767: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      1023: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
     },
   });
 
   new Swiper('.busses-block__container', {
     slidesPerView: 4,
     spaceBetween: 30,
-
     navigation: {
       nextEl: '.busses-block__slider-nav .swiper-button-next',
       prevEl: '.busses-block__slider-nav .swiper-button-prev',
     },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      520: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      767: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      1023: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+    },
   });
 
   new Swiper('.actions-block__container', {
-    slidesPerView: 3,
-    spaceBetween: 28,
-
+    slidesPerView: 1,
+    spaceBetween: 30,
     navigation: {
       nextEl: '.actions-block__slider-nav .swiper-button-next',
       prevEl: '.actions-block__slider-nav .swiper-button-prev',
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+
+      767: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1023: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
     },
   });
 
@@ -77,5 +132,22 @@ document.addEventListener('DOMContentLoaded', function() {
       myMap.geoObjects.add(myPlacemarkWithContent);
     });
   }
+
+  //scroll
+  document.querySelectorAll('[data-js="scroll"]').forEach(function(el) {
+    el.addEventListener('click', function(event) {
+      event.preventDefault();
+
+      const scrollTarget = this.dataset.scroll;
+      if (scrollTarget) {
+        hideMenu();
+
+        const scrollTargetElement = document.querySelector(
+            `[data-scroll-target="${scrollTarget}"]`);
+        scrollTargetElement.scrollIntoView({behavior: 'smooth'});
+      }
+    })
+
+  });
 
 });
