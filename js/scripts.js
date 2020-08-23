@@ -136,17 +136,21 @@ document.addEventListener('DOMContentLoaded', function() {
   //scroll
   document.querySelectorAll('[data-js="scroll"]').forEach(function(el) {
     el.addEventListener('click', function(event) {
-      event.preventDefault();
+
 
       const scrollTarget = this.dataset.scroll;
       if (scrollTarget) {
+        event.preventDefault();
         hideMenu();
 
         const scrollTargetElement = document.querySelector(
             `[data-scroll-target="${scrollTarget}"]`);
-        scrollTargetElement.scrollIntoView({behavior: 'smooth'});
+        if (scrollTargetElement) {
+          scrollTargetElement.scrollIntoView({behavior: 'smooth'});
+        }
+
       }
-    })
+    });
 
   });
 
